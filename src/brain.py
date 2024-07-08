@@ -1,57 +1,35 @@
-# src/brain.py
-from intrinsic_motivation import IntrinsicMotivation
-from moral_code import MoralCode
-from memory_db import list_files, read_file, write_file, delete_file
+class MrDataAgent:
+    def __init__(self, environment):
+        self.environment = environment
+        self.Q_table = np.zeros((environment.num_states, environment.num_actions))  # Placeholder
+        self.gamma = 0.9
+        self.epsilon = 0.1
+        self.persona = Persona()
 
-class Brain:
-    def __init__(self):
-        self.memory = []
-        self.motivation = IntrinsicMotivation()
-        self.moral_code = MoralCode()
+    def act(self, state):
+        if np.random.random() < self.epsilon:
+            action = np.random.randint(0, self.environment.num_actions)
+        else:
+            action = np.argmax(self.Q_table[state, :])
+        return action
 
-    def initialize(self):
-        # Initialize neural network and other components
-        print("Initializing Mr. Data...")
+    def learn(self, state, action, reward, next_state):
+        Q_value = self.Q_table[state, action]
+        max_Q_value = np.max(self.Q_table[next_state, :])
+        new_Q_value = reward + self.gamma * max_Q_value
+        self.Q_table[state, action] = new_Q_value
 
-    def run(self):
-        # Main loop for Mr. Data's operations
-        print("Running Mr. Data...")
-        while True:
-            self.reflect()
-            self.plan()
-            self.act()
+    def run(self, num_episodes):
+        for episode in range(num_episodes):
+            state = self.environment.reset()
+            done = False
+            while not done:
+                action = self.act(state)
+                next_state, reward, done = self.environment.step(action)
+                self.learn(state, action, reward, next_state)
+                state = next_state
 
-    def reflect(self):
-        # Reflect on recent activities and interactions
-        print("Reflecting...")
-        # Example: Review memory logs and update internal state
-        files = list_files('memory')
-        for file in files:
-            content = read_file(f'memory/{file}')
-            self.memory.append(content)
-
-    def plan(self):
-        # Plan next actions based on reflections
-        print("Planning...")
-        # Example: Use intrinsic motivation and moral code to decide next steps
-        motivations = self.motivation.evaluate()
-        ethical_considerations = self.moral_code.evaluate(motivations)
-        self.memory.append((motivations, ethical_considerations))
-
-    def act(self):
-        # Execute planned actions
-        print("Acting...")
-        # Example: Perform actions based on planning
-        if self.memory:
-            action = self.memory.pop(0)
-            print(f"Executing action: {action}")
-
-    def add_to_memory(self, content):
-        # Method to add content to memory
-        write_file('memory/new_memory.txt', content)
-
-    def clear_memory(self):
-        # Method to clear memory
-        files = list_files('memory')
-        for file in files:
-            delete_file(f'memory/{file}')
+    def process_input(self, user_input):
+        # Placeholder: Add reasoning and decision-making based on intrinsic motivation and persona
+        response = f"Processing input: {user_input}"
+        return response
