@@ -1,7 +1,12 @@
 # src/brain.py
+from intrinsic_motivation import IntrinsicMotivation
+from moral_code import MoralCode
+
 class Brain:
     def __init__(self):
         self.memory = []
+        self.motivation = IntrinsicMotivation()
+        self.moral_code = MoralCode()
 
     def initialize(self):
         # Initialize neural network and other components
