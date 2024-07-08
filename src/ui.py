@@ -1,20 +1,11 @@
-# ui.py
-from PyQt5 import QtWidgets, QtGui, QtCore
+# src/ui.py
+import tkinter as tk
 
-class CollaborationUI(QtWidgets.QWidget):
-    def __init__(self):
-        super().__init__()
-        self.initUI()
+def create_ui():
+    root = tk.Tk()
+    root.title("Mr. Data Interface")
 
-    def initUI(self):
-        self.setWindowTitle('Mr. Data Collaboration Window')
-        self.setGeometry(100, 100, 800, 600)
-        self.show()
+    label = tk.Label(root, text="Welcome to Mr. Data Interface")
+    label.pack()
 
-def main():
-    app = QtWidgets.QApplication([])
-    ui = CollaborationUI()
-    app.exec_()
-
-if __name__ == "__main__":
-    main()
+    root.mainloop()

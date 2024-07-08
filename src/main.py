@@ -1,7 +1,10 @@
-# main.py
+# src/main.py
+from brain import Brain
+
 def main():
-    # Initialization code here
-    print("Initializing Mr. Data...")
+    data_brain = Brain()
+    data_brain.initialize()
+    data_brain.run()
 
 if __name__ == "__main__":
     main()
