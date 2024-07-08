@@ -1,7 +1,10 @@
+import numpy as np
+from environment import Environment
+
 class MrDataAgent:
     def __init__(self, environment):
         self.environment = environment
-        self.Q_table = np.zeros((environment.num_states, environment.num_actions))  # Placeholder
+        self.Q_table = np.zeros((environment.num_states, environment.num_actions))
         self.gamma = 0.9
         self.epsilon = 0.1
         self.persona = Persona()
@@ -30,6 +33,10 @@ class MrDataAgent:
                 state = next_state
 
     def process_input(self, user_input):
-        # Placeholder: Add reasoning and decision-making based on intrinsic motivation and persona
-        response = f"Processing input: {user_input}"
+        if user_input.lower() == 'hello':
+            response = "Hello! How can I assist you today?"
+        elif user_input.lower() == 'status':
+            response = "I am fully operational and ready to assist."
+        else:
+            response = "I'm sorry, I didn't understand that command."
         return response
