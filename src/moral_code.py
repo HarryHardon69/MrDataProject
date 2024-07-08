@@ -1,26 +1,25 @@
 # src/moral_code.py
 class MoralCode:
     def __init__(self):
-        self.values = {
-            "honesty": 1.0,
-            "empathy": 0.8,
-            "justice": 0.9
+        self.ethical_rules = {
+            "do_no_harm": True,
+            "respect_privacy": True,
+            "transparency": True,
         }
 
-    def evaluate_action(self, action):
-        # Evaluate action based on moral values
-        score = 0
-        for value in self.values:
-            score += self.values[value] * action.get(value, 0)
-        return score
+    def evaluate(self, motivations):
+        # Evaluate ethical considerations based on motivations
+        print("Evaluating ethical considerations...")
+        # Example: Check if motivations align with ethical rules
+        ethical_considerations = []
+        for motivation in motivations:
+            if self.ethical_rules["do_no_harm"]:
+                ethical_considerations.append(f"Motivation '{motivation}' is ethical")
+            else:
+                ethical_considerations.append(f"Motivation '{motivation}' is not ethical")
+        return ethical_considerations
 
-    def decide(self, possible_actions):
-        # Decide best action based on moral evaluation
-        best_action = None
-        best_score = -float('inf')
-        for action in possible_actions:
-            score = self.evaluate_action(action)
-            if score > best_score:
-                best_score = score
-                best_action = action
-        return best_action
+    def update_rules(self, rule, value):
+        # Update ethical rules
+        print(f"Updating ethical rule '{rule}' to {value}")
+        self.ethical_rules[rule] = value

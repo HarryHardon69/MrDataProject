@@ -6,6 +6,7 @@ class IntrinsicMotivation:
         self.Q_table = np.zeros((100, 10))  # Example sizes
         self.gamma = 0.9
         self.epsilon = 0.1
+        self.motivations = []
 
     def act(self, state):
         if np.random.random() < self.epsilon:
@@ -31,3 +32,16 @@ class IntrinsicMotivation:
                 done = np.random.random() > 0.95
                 self.learn(state, action, reward, next_state)
                 state = next_state
+
+    def evaluate(self):
+        # Evaluate current motivations
+        print("Evaluating motivations...")
+        # Example: Generate a list of motivations
+        self.motivations = ["Learn new skill", "Assist user", "Optimize system"]
+        return self.motivations
+
+    def update(self, feedback):
+        # Update motivations based on feedback
+        print(f"Updating motivations with feedback: {feedback}")
+        # Example: Modify motivations based on user feedback
+        self.motivations.append(feedback)

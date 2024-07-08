@@ -3,6 +3,7 @@ import cv2
 
 def capture_screen():
     # Code to capture the local screen
+    # Example: Using a library like pyautogui for screen capture
     pass
 
 def capture_camera():
