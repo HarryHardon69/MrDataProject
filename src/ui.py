@@ -1,27 +1,13 @@
-# src/ui.py
-import tkinter as tk
-from brain import Brain
+class UserInterface:
+    def __init__(self, agent):
+        self.agent = agent
 
-class DataUI:
-    def __init__(self):
-        self.brain = Brain()
-
-    def create_ui(self):
-        root = tk.Tk()
-        root.title("Mr. Data Interface")
-
-        label = tk.Label(root, text="Welcome to Mr. Data Interface")
-        label.pack()
-
-        start_button = tk.Button(root, text="Start", command=self.start_data)
-        start_button.pack()
-
-        root.mainloop()
-
-    def start_data(self):
-        self.brain.initialize()
-        self.brain.run()
-
-if __name__ == "__main__":
-    ui = DataUI()
-    ui.create_ui()
+    def start(self):
+        print("Mr. Data is now active. Type 'exit' to quit.")
+        while True:
+            user_input = input("You: ")
+            if user_input.lower() == 'exit':
+                print("Shutting down Mr. Data. Goodbye!")
+                break
+            response = self.agent.process_input(user_input)
+            print(f"Mr. Data: {response}")
