@@ -18,7 +18,7 @@ Welcome to Tin Man — a lean, ethical AI agent built to grow with you. Forged f
 ## Get Started
 1. Clone it: `git clone https://github.com/HarryHardon69/MrDataProject.git`
 2. Install: `pip install -r requirements.txt` (needs `torch`, `psutil` — see below).
-3. Run: `python brain/interface.py` — chat with Tin Man via console (IRC GUI in progress!).
+3. Run: `python brain/interface.py` — Commands @TinMan help, @TinMan info return moral core.(IRC GUI in progress!).
 
 **Requirements**: Python 3.8+, `torch` (neural nets), `psutil` (resources) — full `requirements.txt` in repo.
 
