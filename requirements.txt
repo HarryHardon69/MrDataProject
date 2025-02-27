@@ -1,7 +1,6 @@
-numpy
-opencv-python
-pytesseract
-pyttsx3
-PyQt5
-psutil
-pyautogui
+# Agent/requirements.txt
+torch>=2.0.0          # CPU-only SNN and tensors
+numpy>=1.24.0         # Array ops
+pytest>=7.4.0         # TestBot validation
+psutil>=5.9.0         # Performance monitoring
+blake3>=0.3.0         # Mock ZK proofs (BLAKE3)
