@@ -1,0 +1,12 @@
+hardware:
+  device: auto # Options: auto, cpu, cuda, quantum
+  use_cuda: false
+  max_memory_mb: 1024
+ethics:
+  intent_weight: 0.4
+  veneration_weight: 0.3
+  context_weight: 0.3
+  proof_interval: 1000 # Cycles between blockchain updates
+interface:
+  mode: irc
+  irc_channels: ["#tinman-public", "#tinman-dev"]
