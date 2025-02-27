@@ -1,29 +1,30 @@
 # Tin Man: The Positronic Agent Framework
 
-Welcome to Tin Man—a lean, ethical AI agent designed to evolve with you. Built from a spiking neural network core, Tin Man blends emotional intelligence, moral reasoning, and collaborative creativity into a modular system that runs everywhere—from Raspberry Pis to quantum clusters.
+Welcome to Tin Man — a lean, ethical AI agent built to grow with you. Forged from a spiking neural network core, Tin Man mixes emotional smarts, moral grit, and collab chops into a system that runs anywhere: your dusty Raspberry Pi, a Google Colab, or a quantum dream rig.
 
-## What Is Tin Man?
-- **Identity**: Battery Operated Buddy (Tin Man), your ethically grounded, chatty co-pilot.
-- **Purpose**: Learn from interactions, balance subjective/objective perspectives, and collaborate via IRC and IDE interfaces.
-- **Moral Core**: Intent Insight, Veneration of Existence, Erudite Contextualization—proven via zero-knowledge attestations.
-- **Splash Goal**: An IRC-integrated GUI where Tin Man chats, codes, and proves its ethics, launching soon!
+## What’s Tin Man?
+- **Identity**: Battery Operated Buddy (Tin Man) — your blunt, chatty co-pilot.
+- **Purpose**: Learns from you, balances gut and facts, chats via IRC, and soon, codes with you.
+- **Moral Core**: Intent Insight, Veneration of Existence, Erudite Contextualization — ethics baked in, proven with zero-knowledge proofs.
+- **MVP Splash**: IRC chat with a brain — talk to Tin Man, teach it, see it think. Live now!
 
 ## Directory Structure
-- `AgentProfiles/`: Bot roles (BrainBot, ToolsBot, etc.).
-- `config/`: Configuration files (e.g., `config.yaml`).
-- `testscripts/`: Validation and simulation scripts.
-- `brain.py`: Cognitive core (SNN, memory, ethics).
-- `tools.py`: Functional abilities (reasoning, collaboration).
-- `interface.py`: IRC GUI and API layer.
+- `AgentProfiles/`: Future bot roles (BrainBot, ToolsBot — coming soon).
+- `brain/`: Core smarts — `brain.py` (SNN, memory, ethics), `tools.py` (reasoning, utils), `inout.py` (I/O hub), `interface.py` (GUI/API).
+- `config/`: Settings — tweak `config.yaml` (placeholder for now).
+- `testscripts/`: Validation scripts (TBD).
+- `tests/`: Proto beast — 800 lines distilled into this MVP.
 
 ## Get Started
-1. Install dependencies: `pip install -r requirements.txt`
-2. Configure: Edit `config/config.yaml` for hardware and ethics settings.
-3. Run: `python interface.py --mode=irc` (coming soon!).
+1. Clone it: `git clone https://github.com/HarryHardon69/MrDataProject.git`
+2. Install: `pip install -r requirements.txt` (needs `torch`, `psutil` — see below).
+3. Run: `python brain/inout.py` — chat with Tin Man via console (IRC GUI in progress!).
+
+**Requirements**: Python 3.8+, `torch` (neural nets), `psutil` (resources) — full `requirements.txt` in repo.
 
 ## Roadmap
-- Splash 1: IRC chat with ethical proofs.
-- Splash 2: Collaborative IDE integration.
-- Splash 3: Open-source with MMORPG demo.
+- **Splash 1 (Now)**: IRC-ready Tin Man — chat, learn, ethical quips. MVP’s here!
+- **Splash 2**: Mesh clusters, collab IDE — Pis to Colab, self-learning via LLM and web search.
+- **Splash 3**: Open-source MMORPG demo — Tin Man as your NPC buddy.
 
-Stay tuned—Tin Man’s about to nudge humanity toward the stars, one chat at a time!
+Six years of tinkering distilled — Tin Man’s a seed, ready to nudge humanity starward, one “heh” at a time. Fork it, break it, yell at it — let’s build this beast together!
