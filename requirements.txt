@@ -1,6 +1,17 @@
-# Agent/requirements.txt
-torch>=2.0.0          # CPU-only SNN and tensors
-numpy>=1.24.0         # Array ops
-pytest>=7.4.0         # TestBot validation
-psutil>=5.9.0         # Performance monitoring
-blake3>=0.3.0         # Mock ZK proofs (BLAKE3)
+# Core SNN and numerical operations
+numpy>=1.24.0
+torch>=2.0.0
+snntorch
+
+# System utilities
+psutil>=5.9.0
+
+# LLM interaction
+requests
+openai
+
+# GUI
+streamlit
+
+# Testing
+pytest>=7.4.0
